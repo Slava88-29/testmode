@@ -36,6 +36,8 @@ class AuthTest {
         form.$("[name=password]").setValue(registeredUser.password);
         form.$(".button").click();
         webdriver().shouldHave(url("http://localhost:9999/dashboard"));
+        $("#root").shouldBe(visible);
+        $("#root").shouldHave(text("Личный кабинет"));
         // TODO: добавить логику теста, в рамках которого будет выполнена попытка входа в личный кабинет с учётными
         //  данными зарегистрированного активного пользователя, для заполнения полей формы используйте
         //  пользователя registeredUser
